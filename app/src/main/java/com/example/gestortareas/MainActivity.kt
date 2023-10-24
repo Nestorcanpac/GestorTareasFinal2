@@ -41,11 +41,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             Column {
                 Titulo(Message("Gestor de tareas"))
-                Tareas(Tareas("Tarea 1","Hacer los deberes","Baja"))
-                Tareas2(Tareas("Tarea 2","Estudiar para examen","Alta"))
-                Tareas3(Tareas("Tarea 3","Beber mucha agua","Media"))
-                Tareas2(Tareas("Tarea 4","Poner la mesa","Alta"))
-                Tareas(Tareas("Tarea 5","Limpiar tu cuarto","Baja"))
+                Tareas(Tareas("Tarea 1","Hacer los deberes","Baja","-----------------------------------------"))
+                Tareas2(Tareas("Tarea 2","Estudiar para examen","Alta","-----------------------------------------"))
+                Tareas3(Tareas("Tarea 3","Beber mucha agua","Media","-----------------------------------------"))
+                Tareas2(Tareas("Tarea 4","Poner la mesa","Alta","-----------------------------------------"))
+                Tareas(Tareas("Tarea 5","Limpiar tu cuarto","Baja","-----------------------------------------"))
 
 
             }
@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
 }
 
 data class Message(val Titulo: String)
-data class Tareas(val tareas: String,val descripcion: String, val prioridad:String)
+data class Tareas(val tareas: String,val descripcion: String, val prioridad:String, val separador: String)
 
 @Composable
 fun Titulo(msg: com.example.gestortareas.Message){
@@ -88,6 +88,9 @@ fun Tareas(msg: com.example.gestortareas.Tareas){
             Text(text = msg.descripcion)
             Text(text = msg.prioridad,
                 Modifier.background(Color.Green)
+            )
+            Text(text = msg.separador,
+                fontWeight = FontWeight.Bold
             )
 
            
@@ -134,6 +137,8 @@ fun Tareas2(msg: com.example.gestortareas.Tareas){
             Text(text = msg.prioridad,
                 Modifier.background(Color.Red)
             )
+            Text(text = msg.separador,
+                fontWeight = FontWeight.Bold)
         }
         Row {
             Image(painter = painterResource(R.drawable.xroja),
@@ -170,6 +175,8 @@ fun Tareas3(msg: com.example.gestortareas.Tareas){
             Text(text = msg.prioridad,
                 Modifier.background(Color.Yellow)
             )
+            Text(text = msg.separador,
+                fontWeight = FontWeight.Bold)
         }
         Row {
             Image(painter = painterResource(R.drawable.xroja),
