@@ -47,10 +47,7 @@ class MainActivity : ComponentActivity() {
                 Tareas2(Tareas("Tarea 4","Poner la mesa","Alta","-----------------------------------------"))
                 Tareas(Tareas("Tarea 5","Limpiar tu cuarto","Baja","-----------------------------------------"))
 
-
             }
-
-
 
         }
     }
